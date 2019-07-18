@@ -78,3 +78,13 @@ This router TB is functional but there are more features I want to implement, in
  - Include a fault injection method with UVM and/or using formal methods, such as 
 [How Formal Reduces Fault Analysis for ISO 26262](https://www.mentor.com/products/fv/resources/overview/how-formal-reduces-fault-analysis-for-iso-26262-82758134-85e7-4753-92f4-6f90e36e7d96)
  - More open-ended task would be to keep studying SV and UVM usage methods to improve the reuse for this testbench.
+
+## Fault Simulation
+
+briefly describe here the fault simulation environment and results
+
+## Formal Verification
+
+briefly describe here the formal verification environment and results
+
+
