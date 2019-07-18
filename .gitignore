@@ -1,0 +1,9 @@
+**/*.ucdb
+**/*.wlf
+**/*.vcd
+**/*.log
+**/*.vstf
+**/*.bin
+**/transcript
+**/work
+**/certe_dump.xml
