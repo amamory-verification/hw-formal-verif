@@ -1,1 +1,1 @@
-netlist of Vending Machine 1
+netlist of Vending Machine 2

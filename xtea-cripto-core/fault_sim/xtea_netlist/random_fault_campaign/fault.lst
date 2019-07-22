@@ -1,0 +1,23 @@
+# fault.lst
+
+# Default
+fault_target tb.core
+
+# Example of stuck-at 0 fault simulation
+#fault_target tb.core  -select_cellports -select_ports -type SA0  
+
+# Example of stuck-at 1 fault simulation
+#fault_target tb.core  -select_cellports -select_ports -type SA1
+
+# Example of stuck-at 0 and stuck-at 1 fault simulation
+#fault_target tb.core  -select_cellports -select_ports -type SA0+SA1
+
+# Example of SEU fault simulation
+#fault_target tb.core  -type SEU
+
+# Example of SET fault simulation
+#fault_target tb.core  -select_cellports -select_ports -type SET
+
+# Example of all fault types simulation
+#fault_target tb.core  -type all
+

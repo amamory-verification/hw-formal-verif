@@ -3,14 +3,14 @@ Use IEEE.std_logic_1164.all;
 use IEEE.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --  Gustavo e Nathalia
-entity maqSanduiche is
-	port( M100, R_bacon, R_atum, R_green, clock, reset,devo: in std_logic;
+entity sanduba is
+	port( M100, R_bacon, R_atum, R_green, clock, reset,dev: in std_logic;
 		  D100, Bacon, Atum, Green,Busy: out std_logic
 		);
 end entity;
 
-architecture sandy of maqSanduiche is
-	type state is (Action, Soma, Nulo, Dev, SBacon, SAtum, SGreen);
+architecture sandy of sanduba is
+	type state is (Action, Soma, Nulo, Devo, SBacon, SAtum, SGreen);
 	signal EA, PE: state;
 	signal erro: std_logic;
 	signal count:  std_logic_vector(4 downto 0);
@@ -25,7 +25,7 @@ begin
 		end if;
 	end process;
 	
-	process (M100,EA,count,PE,devo,erro,R_bacon,R_atum,R_green)
+	process (M100,EA,count,PE,dev,erro,R_bacon,R_atum,R_green)
 	begin
 		case EA is 
 		when Action =>
@@ -39,7 +39,7 @@ begin
 				PE <= SGreen;
 			elsif erro = '1' then 
 				PE <= Nulo;
-			elsif devo = '1' then 
+			elsif dev = '1' then 
 			PE <= Nulo;
 			else PE <= Action;
 			end if;
@@ -50,10 +50,10 @@ begin
 		when Nulo =>
 			if count = "00000" then
 				PE <= Action;
-			else PE <= Dev;
+			else PE <= Devo;
 			end if;
 			
-		when Dev =>
+		when Devo =>
 			PE <= Nulo;
 		
 		when SBacon =>
@@ -78,7 +78,7 @@ begin
 		when Soma =>
 			count <= count + "00001";
 			
-		when Dev =>
+		when Devo =>
 			if count > "00000" then 
 				count <= count - "00001";
 			end if;
@@ -96,7 +96,7 @@ begin
 		end if;
 
 	end process;
-		D100 <= '1' when EA = Dev else '0';
+		D100 <= '1' when EA = Devo else '0';
 		Bacon <= '1' when EA = SBacon else '0';
 		Atum <= '1' when EA = SAtum else '0';
 		Green <= '1' when EA = SGreen else '0';

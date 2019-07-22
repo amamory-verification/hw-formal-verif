@@ -2,14 +2,14 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
-entity t4 is
+entity sanduba is
 	port(
 		m100, dev, r_green, r_atum, r_bacon, clock, reset: in std_logic;
 		d100, green, atum, bacon, busy: out std_logic 
 	);
 end entity;
 
-architecture maquina of t4 is
+architecture maquina of sanduba is
 	type state is (action, soma, sgreen, satum, sbacon, nulo, devolve); 
 	signal ea, pe: state;
 	signal count: std_logic_vector(4 downto 0);

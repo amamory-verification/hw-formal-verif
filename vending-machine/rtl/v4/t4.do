@@ -3,14 +3,13 @@ vlib work
 vmap work work
 
 vcom -work work t4.vhd
-vcom -work work tb_t4.vhd
+vcom -work work ../../sim/tb.vhd
 
 vsim -voptargs=+acc=lprn -t ns work.tb
 
 set StdArithNoWarnings 1
 set StdVitalGlitchNoWarnings 1
 
-do wave.do
+add wave -position insertpoint sim:/tb/sandwich/*
 
-run 75 ns
-
+run 545 ns

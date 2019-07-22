@@ -29,5 +29,5 @@ report timing > timing.rep
 report power > power.rep
 
 ## 5) build physical synthesis environment
-#write_design -innovus -base_name src/layout/RouterCC
-#write_encounter design -basename encounter/router
+write_design -innovus -base_name src/layout/RouterCC
+write_encounter design -basename encounter/router

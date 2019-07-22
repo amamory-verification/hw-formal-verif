@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
 
-entity sanduiche is
+entity sanduba is
     port (
            clock:   in STD_LOGIC;
            reset:   in STD_LOGIC;
@@ -18,9 +18,9 @@ entity sanduiche is
            ATUM: out STD_LOGIC;
            BACON: out STD_LOGIC
        );
-end sanduiche;
+end sanduba;
 
-architecture sanduiche of sanduiche is
+architecture sanduba of sanduba is
 
         type STATES is (Action, SOMA, Sb, Sa, Sg, NULO, DEVOL); 
         signal EA, PE : STATES;   
@@ -115,4 +115,4 @@ begin
         end if;
     end process;
               
-end sanduiche;
+end sanduba;
