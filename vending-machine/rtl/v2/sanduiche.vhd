@@ -26,7 +26,7 @@ architecture sanduba of sanduba is
         signal EA, PE : STATES;   
     
         signal erro  :   std_logic;
-        signal grana  :  std_logic_vector(6 downto 0);
+        signal grana  :  std_logic_vector(4 downto 0);
 
 begin    
  
