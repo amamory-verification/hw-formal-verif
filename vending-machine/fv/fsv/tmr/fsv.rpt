@@ -1,0 +1,253 @@
+=====================================================
+  JasperGold FSV App - Faults Classification Report  
+=====================================================
+
+---[ <Report Information> ]--------------------------------
+-----------------------------------------------------------
+ Num  | module         | created date             | filter 
+-----------------------------------------------------------
+[1]     sanduiche_tmr2   Jul 25 09:45:47 -03 2019   
+
+
+********************************************************************************************
+
+---[ <DESIGN INFORMATION> ]--------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Num  | Flops                         | Latches | Gates      | Nets | Ports | RTL Lines | RTL Instances | Embedded Assumptions | Embedded Assertions | Embedded Covers 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[1]     6 (24) (0 property flop bits)   0 (0)     311 (1346)   364    12      220         4               0                      0                     0
+
+
+********************************************************************************************
+
+---[ <FAULTS CLASSIFICATION SUMMARY> ]------------------------
+--------------------------------------------------------------
+ Num  | Fault Type | Unprocessed | Safe | Dangerous | Unknown 
+--------------------------------------------------------------
+[1]     SA0          0             87     0           0
+[2]     SA1          0             87     0           0
+[3]     SEU          0             24     0           0
+[4]     SET          0             0      0           0
+[5]     MULTI        0             0      0           0
+[6]     Total        0             198    0           0
+
+
+********************************************************************************************
+
+---[ <SA0> ]--------------------------------------
+--------------------------------------------------
+ Num  | Node                     | Classification 
+--------------------------------------------------
+[1]     atum_s(0)                  Safe
+[2]     atum_s(1)                  Safe
+[3]     atum_s(2)                  Safe
+[4]     bacon_s(0)                 Safe
+[5]     bacon_s(1)                 Safe
+[6]     bacon_s(2)                 Safe
+[7]     busy_s(0)                  Safe
+[8]     busy_s(1)                  Safe
+[9]     busy_s(2)                  Safe
+[10]    d100_s(0)                  Safe
+[11]    d100_s(1)                  Safe
+[12]    d100_s(2)                  Safe
+[13]    green_s(0)                 Safe
+[14]    green_s(1)                 Safe
+[15]    green_s(2)                 Safe
+[16]    tmr[0].sandwich.ATUM       Safe
+[17]    tmr[0].sandwich.BACON      Safe
+[18]    tmr[0].sandwich.D100       Safe
+[19]    tmr[0].sandwich.DEV        Safe
+[20]    tmr[0].sandwich.EA(0)      Safe
+[21]    tmr[0].sandwich.EA(1)      Safe
+[22]    tmr[0].sandwich.EA(2)      Safe
+[23]    tmr[0].sandwich.GREEN      Safe
+[24]    tmr[0].sandwich.M100       Safe
+[25]    tmr[0].sandwich.PE(0)      Safe
+[26]    tmr[0].sandwich.PE(1)      Safe
+[27]    tmr[0].sandwich.PE(2)      Safe
+[28]    tmr[0].sandwich.R_atum     Safe
+[29]    tmr[0].sandwich.R_bacon    Safe
+[30]    tmr[0].sandwich.R_green    Safe
+[31]    tmr[0].sandwich.busy       Safe
+[32]    tmr[0].sandwich.clock      Safe
+[33]    tmr[0].sandwich.erro       Safe
+[34]    tmr[0].sandwich.grana(0)   Safe
+[35]    tmr[0].sandwich.grana(1)   Safe
+[36]    tmr[0].sandwich.grana(2)   Safe
+[37]    tmr[0].sandwich.grana(3)   Safe
+[38]    tmr[0].sandwich.grana(4)   Safe
+[39]    tmr[0].sandwich.reset      Safe
+[40]    tmr[1].sandwich.ATUM       Safe
+[41]    tmr[1].sandwich.BACON      Safe
+[42]    tmr[1].sandwich.D100       Safe
+[43]    tmr[1].sandwich.DEV        Safe
+[44]    tmr[1].sandwich.EA(0)      Safe
+[45]    tmr[1].sandwich.EA(1)      Safe
+[46]    tmr[1].sandwich.EA(2)      Safe
+[47]    tmr[1].sandwich.GREEN      Safe
+[48]    tmr[1].sandwich.M100       Safe
+[49]    tmr[1].sandwich.PE(0)      Safe
+[50]    tmr[1].sandwich.PE(1)      Safe
+[51]    tmr[1].sandwich.PE(2)      Safe
+[52]    tmr[1].sandwich.R_atum     Safe
+[53]    tmr[1].sandwich.R_bacon    Safe
+[54]    tmr[1].sandwich.R_green    Safe
+[55]    tmr[1].sandwich.busy       Safe
+[56]    tmr[1].sandwich.clock      Safe
+[57]    tmr[1].sandwich.erro       Safe
+[58]    tmr[1].sandwich.grana(0)   Safe
+[59]    tmr[1].sandwich.grana(1)   Safe
+[60]    tmr[1].sandwich.grana(2)   Safe
+[61]    tmr[1].sandwich.grana(3)   Safe
+[62]    tmr[1].sandwich.grana(4)   Safe
+[63]    tmr[1].sandwich.reset      Safe
+[64]    tmr[2].sandwich.ATUM       Safe
+[65]    tmr[2].sandwich.BACON      Safe
+[66]    tmr[2].sandwich.D100       Safe
+[67]    tmr[2].sandwich.DEV        Safe
+[68]    tmr[2].sandwich.EA(0)      Safe
+[69]    tmr[2].sandwich.EA(1)      Safe
+[70]    tmr[2].sandwich.EA(2)      Safe
+[71]    tmr[2].sandwich.GREEN      Safe
+[72]    tmr[2].sandwich.M100       Safe
+[73]    tmr[2].sandwich.PE(0)      Safe
+[74]    tmr[2].sandwich.PE(1)      Safe
+[75]    tmr[2].sandwich.PE(2)      Safe
+[76]    tmr[2].sandwich.R_atum     Safe
+[77]    tmr[2].sandwich.R_bacon    Safe
+[78]    tmr[2].sandwich.R_green    Safe
+[79]    tmr[2].sandwich.busy       Safe
+[80]    tmr[2].sandwich.clock      Safe
+[81]    tmr[2].sandwich.erro       Safe
+[82]    tmr[2].sandwich.grana(0)   Safe
+[83]    tmr[2].sandwich.grana(1)   Safe
+[84]    tmr[2].sandwich.grana(2)   Safe
+[85]    tmr[2].sandwich.grana(3)   Safe
+[86]    tmr[2].sandwich.grana(4)   Safe
+[87]    tmr[2].sandwich.reset      Safe
+
+---[ <SA1> ]--------------------------------------
+--------------------------------------------------
+ Num  | Node                     | Classification 
+--------------------------------------------------
+[1]     atum_s(0)                  Safe
+[2]     atum_s(1)                  Safe
+[3]     atum_s(2)                  Safe
+[4]     bacon_s(0)                 Safe
+[5]     bacon_s(1)                 Safe
+[6]     bacon_s(2)                 Safe
+[7]     busy_s(0)                  Safe
+[8]     busy_s(1)                  Safe
+[9]     busy_s(2)                  Safe
+[10]    d100_s(0)                  Safe
+[11]    d100_s(1)                  Safe
+[12]    d100_s(2)                  Safe
+[13]    green_s(0)                 Safe
+[14]    green_s(1)                 Safe
+[15]    green_s(2)                 Safe
+[16]    tmr[0].sandwich.ATUM       Safe
+[17]    tmr[0].sandwich.BACON      Safe
+[18]    tmr[0].sandwich.D100       Safe
+[19]    tmr[0].sandwich.DEV        Safe
+[20]    tmr[0].sandwich.EA(0)      Safe
+[21]    tmr[0].sandwich.EA(1)      Safe
+[22]    tmr[0].sandwich.EA(2)      Safe
+[23]    tmr[0].sandwich.GREEN      Safe
+[24]    tmr[0].sandwich.M100       Safe
+[25]    tmr[0].sandwich.PE(0)      Safe
+[26]    tmr[0].sandwich.PE(1)      Safe
+[27]    tmr[0].sandwich.PE(2)      Safe
+[28]    tmr[0].sandwich.R_atum     Safe
+[29]    tmr[0].sandwich.R_bacon    Safe
+[30]    tmr[0].sandwich.R_green    Safe
+[31]    tmr[0].sandwich.busy       Safe
+[32]    tmr[0].sandwich.clock      Safe
+[33]    tmr[0].sandwich.erro       Safe
+[34]    tmr[0].sandwich.grana(0)   Safe
+[35]    tmr[0].sandwich.grana(1)   Safe
+[36]    tmr[0].sandwich.grana(2)   Safe
+[37]    tmr[0].sandwich.grana(3)   Safe
+[38]    tmr[0].sandwich.grana(4)   Safe
+[39]    tmr[0].sandwich.reset      Safe
+[40]    tmr[1].sandwich.ATUM       Safe
+[41]    tmr[1].sandwich.BACON      Safe
+[42]    tmr[1].sandwich.D100       Safe
+[43]    tmr[1].sandwich.DEV        Safe
+[44]    tmr[1].sandwich.EA(0)      Safe
+[45]    tmr[1].sandwich.EA(1)      Safe
+[46]    tmr[1].sandwich.EA(2)      Safe
+[47]    tmr[1].sandwich.GREEN      Safe
+[48]    tmr[1].sandwich.M100       Safe
+[49]    tmr[1].sandwich.PE(0)      Safe
+[50]    tmr[1].sandwich.PE(1)      Safe
+[51]    tmr[1].sandwich.PE(2)      Safe
+[52]    tmr[1].sandwich.R_atum     Safe
+[53]    tmr[1].sandwich.R_bacon    Safe
+[54]    tmr[1].sandwich.R_green    Safe
+[55]    tmr[1].sandwich.busy       Safe
+[56]    tmr[1].sandwich.clock      Safe
+[57]    tmr[1].sandwich.erro       Safe
+[58]    tmr[1].sandwich.grana(0)   Safe
+[59]    tmr[1].sandwich.grana(1)   Safe
+[60]    tmr[1].sandwich.grana(2)   Safe
+[61]    tmr[1].sandwich.grana(3)   Safe
+[62]    tmr[1].sandwich.grana(4)   Safe
+[63]    tmr[1].sandwich.reset      Safe
+[64]    tmr[2].sandwich.ATUM       Safe
+[65]    tmr[2].sandwich.BACON      Safe
+[66]    tmr[2].sandwich.D100       Safe
+[67]    tmr[2].sandwich.DEV        Safe
+[68]    tmr[2].sandwich.EA(0)      Safe
+[69]    tmr[2].sandwich.EA(1)      Safe
+[70]    tmr[2].sandwich.EA(2)      Safe
+[71]    tmr[2].sandwich.GREEN      Safe
+[72]    tmr[2].sandwich.M100       Safe
+[73]    tmr[2].sandwich.PE(0)      Safe
+[74]    tmr[2].sandwich.PE(1)      Safe
+[75]    tmr[2].sandwich.PE(2)      Safe
+[76]    tmr[2].sandwich.R_atum     Safe
+[77]    tmr[2].sandwich.R_bacon    Safe
+[78]    tmr[2].sandwich.R_green    Safe
+[79]    tmr[2].sandwich.busy       Safe
+[80]    tmr[2].sandwich.clock      Safe
+[81]    tmr[2].sandwich.erro       Safe
+[82]    tmr[2].sandwich.grana(0)   Safe
+[83]    tmr[2].sandwich.grana(1)   Safe
+[84]    tmr[2].sandwich.grana(2)   Safe
+[85]    tmr[2].sandwich.grana(3)   Safe
+[86]    tmr[2].sandwich.grana(4)   Safe
+[87]    tmr[2].sandwich.reset      Safe
+
+---[ <SEU> ]--------------------------------------
+--------------------------------------------------
+ Num  | Node                     | Classification 
+--------------------------------------------------
+[1]     tmr[0].sandwich.EA(0)      Safe
+[2]     tmr[0].sandwich.EA(1)      Safe
+[3]     tmr[0].sandwich.EA(2)      Safe
+[4]     tmr[0].sandwich.grana(0)   Safe
+[5]     tmr[0].sandwich.grana(1)   Safe
+[6]     tmr[0].sandwich.grana(2)   Safe
+[7]     tmr[0].sandwich.grana(3)   Safe
+[8]     tmr[0].sandwich.grana(4)   Safe
+[9]     tmr[1].sandwich.EA(0)      Safe
+[10]    tmr[1].sandwich.EA(1)      Safe
+[11]    tmr[1].sandwich.EA(2)      Safe
+[12]    tmr[1].sandwich.grana(0)   Safe
+[13]    tmr[1].sandwich.grana(1)   Safe
+[14]    tmr[1].sandwich.grana(2)   Safe
+[15]    tmr[1].sandwich.grana(3)   Safe
+[16]    tmr[1].sandwich.grana(4)   Safe
+[17]    tmr[2].sandwich.EA(0)      Safe
+[18]    tmr[2].sandwich.EA(1)      Safe
+[19]    tmr[2].sandwich.EA(2)      Safe
+[20]    tmr[2].sandwich.grana(0)   Safe
+[21]    tmr[2].sandwich.grana(1)   Safe
+[22]    tmr[2].sandwich.grana(2)   Safe
+[23]    tmr[2].sandwich.grana(3)   Safe
+[24]    tmr[2].sandwich.grana(4)   Safe
+
+
+
+
+[JasperGold 2018.06] [Platform Linux] [Version 2018.06p002 64 bits] [Build date 2018.08.27 18:04:53 PDT]
