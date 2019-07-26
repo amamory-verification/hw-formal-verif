@@ -58,9 +58,9 @@ package HeMPS_defaults is
 ---------------------------------------------------------
 -- CONSTANTS DEPENDENTES DA PROFUNDIDADE DA FILA
 ---------------------------------------------------------
-        constant TAM_BUFFER: integer := 16;
-        constant TAM_BUFFER_DMNI: integer := 16;
-        constant TAM_POINTER : integer range 1 to 32 := 4;
+        constant TAM_BUFFER: integer := 4;
+        constant TAM_BUFFER_DMNI: integer := 16; -- not used in the router
+        constant TAM_POINTER : integer range 1 to 32 := 2;
 
 ---------------------------------------------------------
 -- CONSTANTS DEPENDENTES DO NUMERO DE ROTEADORES
