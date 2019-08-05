@@ -61,8 +61,7 @@ begin
       PE <= NULO;
     when Sgreen =>
       PE <= NULO;
-    when OTHERS =>
-      PE <= ACTION;
+    when OTHERS => null;
     end case;
   end process;
   
@@ -82,8 +81,7 @@ begin
         credito <= credito - 3;
       when Sgreen =>
         credito <= credito - 2;
-      when OTHERS =>
-        credito <= credito;
+      when OTHERS => null;
       end case;
     end if;
   end process;

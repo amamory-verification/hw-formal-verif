@@ -31,6 +31,7 @@ report power  > ${REPORTS_PATH}/${DESIGN_TOP}_power.txt
 report nets   > ${REPORTS_PATH}/${DESIGN_TOP}_nets.txt
 
 ## 6) dft
+# To not perform the dft insertion, just coment the line bellow 
 source dft_setup.tcl
 
 

@@ -11,7 +11,7 @@ set REPORTS_PATH "reports/"
 set DESIGN_TOP "xtea"
 set OUTPUTS_PATH "outputs/"
 set_db script_search_path "./"
-set_db hdl_search_path "./"
+set_db hdl_search_path "../rtl"
 set_db information_level 9 
 #===============================================================================
 #  Load libraries
