@@ -1,4 +1,4 @@
-# Hardware Formal Verification
+# Formal Hardware Verification
 
 This repository containts the assignements for the course
 **Functional Verification on Digital Systems II**, from the 
