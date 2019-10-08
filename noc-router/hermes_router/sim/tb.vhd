@@ -40,41 +40,53 @@ begin
 	process
 	begin
 	
-		-- Send target
 		rx(1) <= '0';
-		wait for 40 ns;
+		data_in(1) <= x"0000";
+		wait until falling_edge(reset);
+		
+		-- Send target
+		wait until rising_edge(clock);
 		rx(1) <= '1';
 		data_in(1) <= x"0012";
-		wait for 40 ns;
-		rx(1) <= '0';
 		
 		-- Lenght
-		wait for 40 ns;
+		wait until rising_edge(clock);
+		wait for 1 ns;
+		if credit_o(1) /= '1' then
+  			wait until credit_o(1) = '1';
+		end if;
 		data_in(1) <= x"0003";
 		rx(1) <= '1';
-		wait for 40 ns;
-		rx(1) <= '0';
 				
 		-- Payload 1st flit
-		wait for 40 ns;
+		wait until rising_edge(clock);
+		wait for 1 ns;
+		if credit_o(1) /= '1' then
+  			wait until credit_o(1) = '1';
+		end if;
 		data_in(1) <= x"1001";
 		rx(1) <= '1';
-		wait for 40 ns;
-		rx(1) <= '0';
 		
 		-- Payload 2nd flit
-		wait for 40 ns;
+		wait until rising_edge(clock);
+		wait for 1 ns;
+		if credit_o(1) /= '1' then
+  			wait until credit_o(1) = '1';
+		end if;
 		data_in(1) <= x"2002";
 		rx(1) <= '1';
-		wait for 40 ns;
-		rx(1) <= '0';
 		
 		-- Payload 3rd flit
-		wait for 40 ns;
+		wait until rising_edge(clock);
+		wait for 1 ns;
+		if credit_o(1) /= '1' then
+  			wait until credit_o(1) = '1';
+		end if;
 		data_in(1) <= x"3003";
 		rx(1) <= '1';
-		wait for 40 ns;
+		wait until rising_edge(clock);
 		rx(1) <= '0';
+		data_in(1) <= x"0000";
 				
 		wait;
 		

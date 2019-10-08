@@ -15,4 +15,4 @@ vsim -novopt work.tb
 do wave.do
 do shutup.do
 
-run 10 us
+run 1 us
