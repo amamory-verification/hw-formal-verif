@@ -24,10 +24,20 @@ begin
 	clock_rx(1) <= clock;
 	clock_rx(2) <= clock;
 	clock_rx(3) <= clock;
+	clock_rx(4) <= clock;
 	
-	credit_i(2) <= '1';
+	credit_i <= (others => '1');
+	rx(0) <= '0';
+	rx(2) <= '0';
+	rx(3) <= '0';
+	rx(4) <= '0';
 
 	reset <= '1', '0' after 10 ns;
+
+	data_in(0) <= (others => '0');
+	data_in(2) <= (others => '0');
+	data_in(3) <= (others => '0');
+	data_in(4) <= (others => '0');
 
 	process
 	begin
