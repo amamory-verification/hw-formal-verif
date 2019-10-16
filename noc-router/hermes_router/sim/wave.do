@@ -1,17 +1,20 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /tb/reset
 add wave -noupdate /tb/clock
-add wave -noupdate -divider Input
-add wave -noupdate /tb/rx(1)
-add wave -noupdate /tb/credit_o(1)
-add wave -noupdate /tb/data_in(1)
-add wave -noupdate -divider Output
-add wave -noupdate /tb/credit_i(2)
-add wave -noupdate /tb/tx(2)
-add wave -noupdate /tb/data_out(2)
+add wave -noupdate /tb/reset
+add wave -noupdate -color {Medium Blue} /tb/rx(4)
+add wave -noupdate -color {Medium Blue} /tb/credit_o(4)
+add wave -noupdate -color {Medium Blue} /tb/data_in(4)
+add wave -noupdate -color Orange /tb/tx(2)
+add wave -noupdate -color Orange /tb/data_out(2)
+add wave -noupdate -expand /tb/rx
+add wave -noupdate /tb/data_in
+add wave -noupdate /tb/credit_o
+add wave -noupdate -expand /tb/tx
+add wave -noupdate /tb/data_out
+add wave -noupdate /tb/credit_i
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {40 ns} 0}
+WaveRestoreCursors {{Cursor 1} {269 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -27,4 +30,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {1328 ns}
+WaveRestoreZoom {0 ns} {1050 ns}

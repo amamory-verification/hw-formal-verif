@@ -27,17 +27,17 @@ begin
 	clock_rx(4) <= clock;
 	
 	credit_i <= (others => '1');
-	rx(0) <= '0';
-	rx(2) <= '0';
-	rx(3) <= '0';
-	rx(4) <= '0';
+	rx(EAST) <= '0';
+	rx(WEST) <= '0';
+	rx(NORTH) <= '0';
+	rx(SOUTH) <= '0';
 
 	reset <= '1', '0' after 10 ns;
 
-	data_in(0) <= (others => '0');
-	data_in(2) <= (others => '0');
-	data_in(3) <= (others => '0');
-	data_in(4) <= (others => '0');
+	data_in(EAST) <= (others => '0');
+	data_in(WEST) <= (others => '0');
+	data_in(NORTH) <= (others => '0');
+	data_in(SOUTH) <= (others => '0');
 
 	process
 	begin
@@ -50,53 +50,53 @@ begin
 	process
 	begin
 	
-		rx(1) <= '0';
-		data_in(1) <= x"0000";
+		rx(LOCAL) <= '0';
+		data_in(LOCAL) <= x"0000";
 		wait until falling_edge(reset);
 		
 		-- Send target
 		wait until rising_edge(clock);
-		rx(1) <= '1';
-		data_in(1) <= x"0012";
+		rx(LOCAL) <= '1';
+		data_in(LOCAL) <= x"0012";
 		
 		-- Lenght
 		wait until rising_edge(clock);
 		wait for 1 ns;
-		if credit_o(1) /= '1' then
-  			wait until credit_o(1) = '1';
+		if credit_o(LOCAL) /= '1' then
+  			wait until credit_o(LOCAL) = '1';
 		end if;
-		data_in(1) <= x"0003";
-		rx(1) <= '1';
+		data_in(LOCAL) <= x"0003";
+		rx(LOCAL) <= '1';
 				
 		-- Payload 1st flit
 		wait until rising_edge(clock);
 		wait for 1 ns;
-		if credit_o(1) /= '1' then
-  			wait until credit_o(1) = '1';
+		if credit_o(LOCAL) /= '1' then
+  			wait until credit_o(LOCAL) = '1';
 		end if;
-		data_in(1) <= x"1001";
-		rx(1) <= '1';
+		data_in(LOCAL) <= x"1001";
+		rx(LOCAL) <= '1';
 		
 		-- Payload 2nd flit
 		wait until rising_edge(clock);
 		wait for 1 ns;
-		if credit_o(1) /= '1' then
-  			wait until credit_o(1) = '1';
+		if credit_o(LOCAL) /= '1' then
+  			wait until credit_o(LOCAL) = '1';
 		end if;
-		data_in(1) <= x"2002";
-		rx(1) <= '1';
+		data_in(LOCAL) <= x"2002";
+		rx(LOCAL) <= '1';
 		
 		-- Payload 3rd flit
 		wait until rising_edge(clock);
 		wait for 1 ns;
-		if credit_o(1) /= '1' then
-  			wait until credit_o(1) = '1';
+		if credit_o(LOCAL) /= '1' then
+  			wait until credit_o(LOCAL) = '1';
 		end if;
-		data_in(1) <= x"3003";
-		rx(1) <= '1';
+		data_in(LOCAL) <= x"3003";
+		rx(LOCAL) <= '1';
 		wait until rising_edge(clock);
-		rx(1) <= '0';
-		data_in(1) <= x"0000";
+		rx(LOCAL) <= '0';
+		data_in(LOCAL) <= x"0000";
 				
 		wait;
 		

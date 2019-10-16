@@ -38,17 +38,17 @@ type state is (S0,S1,S2,S3,S4,S5,S6,S7);
 signal ES, PES: state;
 
 -- sinais do arbitro
-signal ask: std_logic := '0';
-signal sel,prox: integer range 0 to (NPORT-1) := 0;
-signal incoming: reg3 := (others=> '0');
-signal header : regflit := (others=> '0');
+signal ask: std_logic;-- := '0';
+signal sel,prox: integer range 0 to (NPORT-1);-- := 0;
+signal incoming: reg3;-- := (others=> '0');
+signal header : regflit;-- := (others=> '0');
 
 -- sinais do controle
-signal dirx,diry: integer range 0 to (NPORT-1) := 0;
-signal lx,ly,tx,ty: regquartoflit := (others=> '0');
-signal auxfree: regNport := (others=> '0');
-signal source:  arrayNport_reg3 := (others=> (others=> '0'));
-signal sender_ant: regNport := (others=> '0');
+signal dirx,diry: integer range 0 to (NPORT-1);-- := 0;
+signal lx,ly,tx,ty: regquartoflit;-- := (others=> '0');
+signal auxfree: regNport;-- := (others=> '0');
+signal source:  arrayNport_reg3;-- := (others=> (others=> '0'));
+signal sender_ant: regNport;-- := (others=> '0');
 
 begin
 
@@ -106,7 +106,9 @@ begin
         begin
                 if reset='1' then
                         ES<=S0;
+                -- amory, using only rising edge
                 elsif clock'event and clock='0' then
+                --elsif clock'event and clock='1' then
                         ES<=PES;
                 end if;
         end process;

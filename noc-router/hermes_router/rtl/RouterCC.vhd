@@ -73,10 +73,10 @@ end RouterCC;
 
 architecture RouterCC of RouterCC is
 
-signal h, ack_h, data_av, sender, data_ack: regNport := (others=>'0');
-signal data: arrayNport_regflit := (others=>(others=>'0'));
-signal mux_in, mux_out: arrayNport_reg3 := (others=>(others=>'0'));
-signal free: regNport := (others=>'0');
+signal h, ack_h, data_av, sender, data_ack: regNport;-- := (others=>'0');
+signal data: arrayNport_regflit;-- := (others=>(others=>'0'));
+signal mux_in, mux_out: arrayNport_reg3;-- := (others=>(others=>'0'));
+signal free: regNport;-- := (others=>'0');
 
 begin
 

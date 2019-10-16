@@ -66,10 +66,10 @@ architecture Hermes_buffer of Hermes_buffer is
 type fila_out is (S_INIT, S_PAYLOAD, S_SENDHEADER, S_HEADER, S_END, S_END2);
 signal EA : fila_out;
 
-signal buf: buff := (others=>(others=>'0'));
-signal first,last: pointer := (others=>'0');
-signal tem_espaco: std_logic := '0';
-signal counter_flit: regflit := (others=>'0');
+signal buf: buff;-- := (others=>(others=>'0'));
+signal first,last: pointer;-- := (others=>'0');
+signal tem_espaco: std_logic;-- := '0';
+signal counter_flit: regflit;-- := (others=>'0');
 
 begin
 
