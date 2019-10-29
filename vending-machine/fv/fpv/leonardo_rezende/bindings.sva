@@ -1,0 +1,22 @@
+bind sanduiche
+  v_sanduiche i_sanduiche (
+	.clock(clock), 
+	.reset(reset),
+	.R_green(R_green),
+	.R_atum(R_atum),
+	.R_bacon(R_bacon),
+	.erro(erro),
+	.EA(EA),
+	.PE(PE),
+	.grana(grana),
+	.D100(D100),
+	.busy(busy),
+	.DEV(DEV),
+	.M100(M100),
+	.ATUM(ATUM),
+	.GREEN(GREEN),
+	.BACON(BACON),
+	.overflow(overflow)
+);
+
+

@@ -1,0 +1,22 @@
+module test_assertions;
+
+bind sanduba_paulo
+  sanduba_fsm assertions_b(
+  .clock_a(clock),
+	.reset_a(reset),
+	.R_green_a(R_green),
+	.R_atum_a(R_atum),
+	.R_bacon_a(R_bacon),
+	.erro_a(erro),
+  .M100_a(M100),
+  .DEV_a(DEV),
+  .D100_a(D100),
+  .BACON_a(BACON),
+  .ATUM_a(ATUM),
+  .GREEN_a(GREEN),
+  .busy_a(busy),
+  .EA_a(EA),
+  .credito_a(credito)
+  );
+
+endmodule
