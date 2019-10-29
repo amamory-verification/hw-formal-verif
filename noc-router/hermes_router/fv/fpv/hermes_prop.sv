@@ -4,24 +4,27 @@ module hermes_prop (clock, reset,
 	clock_tx, tx, credit_i, data_out,
 	S_EA, N_EA, E_EA, W_EA, L_EA );
 
-input logic clock, reset; 
-input logic [4:0] clock_rx, rx, credit_o;
-input  [15:0] data_in[4:0];
-input logic [4:0] clock_tx, tx, credit_i;
-input logic [15:0] data_out[4:0];
-// internal signal - state in int
-input [2:0] S_EA,N_EA, E_EA, W_EA, L_EA; 
-
 localparam EAST  = 0;
 localparam WEST  = 1;
 localparam NORTH = 2;
 localparam SOUTH = 3;
 localparam LOCAL = 4;
+localparam NPORT = 5; // number of ports
+
+
+input logic clock, reset; 
+input logic [NPORT-1:0] clock_rx, rx, credit_o;
+input  [15:0] data_in[NPORT-1:0];
+input logic [NPORT-1:0] clock_tx, tx, credit_i;
+input logic [15:0] data_out[NPORT-1:0];
+// internal signal - state in int
+input [2:0] S_EA,N_EA, E_EA, W_EA, L_EA; 
+
 
 // FIFO FSMs
 typedef enum {S_INIT, S_HEADER, S_SENDHEADER, S_PAYLOAD, S_END} fifo_fsm_type;
 
-fifo_fsm_type fifo_fsm[4:0];
+fifo_fsm_type fifo_fsm[NPORT-1:0];
 
 assign fifo_fsm[EAST] = fifo_fsm_type'(E_EA);
 assign fifo_fsm[WEST] = fifo_fsm_type'(W_EA);
@@ -43,7 +46,7 @@ assume_credit_i: assume property (credit_i == 5'b11111);
 // implement the input credit assumption, i.e., if there is no credit, rx==0 and data does not change
 genvar i;
 
-generate for (i=0; i<=4; i++) begin :g1
+generate for (i=0; i<NPORT; i++) begin :g1
     assume_stable_datain: assume property (
 	credit_o[i] == 0 |-> ($stable(data_in[i]) && !rx[i])
 	);
@@ -87,16 +90,12 @@ cover_Ltx: cover property (tx[LOCAL]==1);
 // check whether the local input port has received 4 flits
 cover_rx4: cover property ((rx[LOCAL] &&  credit_o[LOCAL])[=4]);
 
-// check all states can be reached
+// check whether all states can be reached
+/*
 genvar j;
 
 generate for (j=0; j<=4; j++) 
 begin :cov_fsm
-	// does not work :/
-	//for(j=S_INIT; j<S_END; j=j+1)
-    //begin 
-    //  cover_state:  cover property (fifo_fsm[i] == j);
-    //end  
     cover_state_init   : cover property (fifo_fsm[j] == S_INIT);
     cover_state_header : cover property (fifo_fsm[j] == S_HEADER);
     cover_state_sendh  : cover property (fifo_fsm[j] == S_SENDHEADER);
@@ -104,6 +103,18 @@ begin :cov_fsm
     cover_state_end    : cover property (fifo_fsm[j] == S_END);
 end
 endgenerate
+*/
+// check whether all states can be reached
+generate
+   for (genvar i = 0; i < NPORT; i++) 
+   begin : rport
+      for (genvar j = S_INIT; j < S_END; j++) 
+      begin : fsm_state
+      	cover_fsm_state : cover property (fifo_fsm[i] == j);
+      end
+   end
+endgenerate;
+
 
 
 //********************
